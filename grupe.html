@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>2023204418 zavrsni projekat</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="myScript.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <img src="images/imilogo_resized.jpg" alt="logo" id="logo">
+    <h1>Institut za medicinska istraživanja</h1>
+    <p>Univerzitet u Beogradu</p>
+  </header>
+
+  <!-- nav -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Početna</a></li>
+      <li><a href="grupe.html">Istraživačke grupe</a></li>
+      <li><a href="projekti.html">Naučni projekti</a></li>
+      <li><a href="rezervacije.html">Rezervacija instrumenata</a></li>
+    </ul>
+  </nav>
+
+  <!-- wrapper -->
+  <section>
+    <div id="wrapper_grupe">
+      <h3><b>Naučno-istraživačke grupe</b></h3><br>
+      <p>Na ovoj stranici možete pročitati više o naučno-istraživačkim grupama Instituta izborom odgovarajuće grupe iz
+        menija ispod.</p>
+      <br>
+      <!-- istrazivacka grupa -->
+      <label for="grupa"> Istraživačka grupa: </label>
+      <select name="grupa" class="grupa">
+        <option value="imunologija"> Imunologija </option>
+        <option value="neuronauke"> Neuronauke </option>
+        <option value="ishrana"> Ishrana i metabolizam </option>
+        <option value="kardio"> Kardiovaskularna fiziologija </option>
+      </select>
+      <br><br>
+
+      <!-- imunologija -->
+      <div id="imunologija">
+        <img src="images/imuno.jpg" alt="logo" class="slika">
+        <h3>Imonologija</h3><br>
+        <p>Analiza nivoa i strukture imunoglobulina i njihove raktivnosti sa antigenima u fiziološkim stanjima i
+          infektivnim (parodontopatije, karijes), autoimunskim (reumatoidni artritis), metaboličkim bolestima (dijabetes
+          tip 2) i hematološkim malignitetima (multipli mijelom). Istraživanja se odvijaju paralelno u nekoliko pravaca:
+          Ispitivanje raeaktivnost imunoglobulina sa mikrobialnim antigenima, sa ciljem definisanja povezanosti ove
+          reaktivnosti i reaktivnosti sa sopstvenim antigenima.
+          Ispitivanje molekulskog sastava (proteini, lipidi, nukleinske kiseline) imunokompleksa periferne krvi
+          imunohemijskim, biohemijskim i „klasičnim“ fizičkohemijskim metodama.
+          Primena foton korelacione spektroskopije (sinonim Dynamic Light Scattering) za analizu veličine
+          imunokompleksa.
+          Analiza morfoloških i reoloških karakteristika eritrocita, kao ćelija najvećeg značaja za uklanjanje
+          imunokompleksa (imunoadherencu).</p>
+      </div>
+
+      <!-- neuronauke -->
+      <div id="neuronauke">
+        <img src="images/neuro.jpg" alt="logo" class="slika">
+        <h3>Neuronauke</h3><br>
+        <p>Grupa za neuronauke bavi se ispitivanjima mehanizama i bioloških korelata viših nervnih funkcija.
+          Ispitivanjima su obuhvaćeni kako zdravi ljudi, tako i ljudi sa različitim patološkim stanjima centralnog
+          nervnog sistema (CNS). Primenjuju se različite metode iz obalasti neurofiziologije i psihofiziologije,
+          neuropsihologije i psihometrije, nauka o sportu i sl. U radu Grupe poseban značaj imaju novorazvijene
+          metode neinvazivne neuromodulacije (MNN) za transkranijalnu stimulaciju pomoću magnetnih impulsa i
+          električnog polja. Ove metode, sa kojima je Grupa stekla značajno iskustvo i međunarodnu reputaciju,
+          omogućavaju selektivnu i ciljanu modulaciju neuralnih krugova i sistema relevantnih za stanje na koje se
+          želi uticati. Aktivnosti Grupe obuhvataju kako upotrebu MNN za funkcionalnu evaluaciju i modulaciju
+          ekscitabilnosti, sinaptičke aktivacije i plasticiteta CNS, tako i ispitvanje interakcija MNN i raznih
+          oblika treninga, fizioterapije i lekova.</p>
+      </div>
+
+      <!-- ishrana i metabolizam -->
+      <div id="ishrana">
+        <img src="images/ishrana.jpg" alt="logo" class="slika">
+        <h3>Ishrana i metabolizam</h3><br>
+        <p>Naučnoistraživački rad Grupe fokusiran je na proučavanje efekata komponenti prisutnih u hrani na zdravlje,
+          uknjučujući i proučavanje njihovih mehanizama delovanja angažovanjem istraživača u okviru sledećih nekoliko
+          pravaca:</p>
+        <ul></ul>
+        <li>dijetarni unos različitih grupa ispitanika procenjuje se korišćenjem validiranih anketnih upitnika u skladu
+          sa
+          EU
+          Menu metodologijom na osnovu postojećih podataka o namirnicam i jelima u nacionalnoj i regijonalnoj bazi
+          podataka,
+          koju je proistekla iz rada Grupe u ovoj oblasti i neprestano se unapređuje;</li>
+        <li>procena dijetarnog unosa, kao i metabolizma masnih kiselina ispituje se analizom masnokiselinskih sastava u
+          cirkulaciji (plazme/seruma) i tkiva (kada su u pitanju ispitivanja na animalnim modelima), uključujući i
+          efekte
+          unosa egzogenih supstanci na status masnih kiselina, pre svega onih sa antioksidativnim potencijalom;</li>
+        <li>biološki efekati biljnih bioaktiva polifenola i njihovih metabolita ispituju se i na in vitro modelima
+          ispitivanjem njihovog vezivanja i uticaja na strukturu i antioksidativne osobine albumina, kao i na funkciju
+          trombocita, odnosno aktivaciju i agregaciju trombocita sa ćelijama bele krvne loze metodom protočne
+          citometrije
+          kao i na parametre koji indiciraju na zamor mišića tokom intenzivne fizičke aktivnosti.</li>
+        </ul>
+      </div>
+
+      <!-- kardiovaskularna fiziologija -->
+      <div id="kardio">
+        <img src="images/kardio.jpg" alt="logo" class="slika">
+        <h3>Kardiovaskularna fiziologija</h3><br>
+        <p>Grupu čine istraživači različitih akademskih pozadina čiji su fokus istraživanja molekularni
+          mehanizmi kardiovaskularnih i bubrežnih bolesti. Ovaj versatilni tim istraživača komplementarnih
+          ekspertiza predstavlja idealnu osnovu za multi- i interdisciplinarna istraživanja. Glavne aktivnosti grupe
+          uključuju:</p>
+        <ul>
+          <li>In vivo istraživanja patofizioloških mehanizama hipertenzije, akutne bubrežne slabosti, hronične
+            bubrežne slabosti i kardiomiopatije u životinjskim modelima</li>
+          <li>Prekliničke studije novih terapija/lekova/bioaktivnih jedinjenja poreklom iz biljaka</li>
+          <li>Hemodinamske, biohemijske, molekularno biološke, histopatološke i imunohistohemijske analize
+            Sprovođenje obuke iz eksperimentalne kardiovaskularne fiziologije i patofiziologije</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Institut za medicinska istraživanja Univerzitet u Beograd</p>
+  </footer>
+</body>
+
+</html>

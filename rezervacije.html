@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>2023204418 zavrsni projekat</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="myScript.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <img src="images/imilogo_resized.jpg" alt="logo" id="logo">
+    <h1>Institut za medicinska istraživanja</h1>
+    <p>Univerzitet u Beogradu</p>
+  </header>
+
+  <!-- nav -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Početna</a></li>
+      <li><a href="grupe.html">Istraživačke grupe</a></li>
+      <li><a href="projekti.html">Naučni projekti</a></li>
+      <li><a href="rezervacije.html">Rezervacija instrumenata</a></li>
+    </ul>
+  </nav>
+
+  <!-- wrapper -->
+  <section>
+    <h3><b>Rezervacija instrumenta za hromatografiju</b></h3><br>
+    <p>Na ovoj stranici možete rezervisati instrument za Vaš naredni eksperiment i videti istoriju rezervacija.</p>
+    <div id=forma>
+      <form onsubmit="return validacijaForme()">
+        <!-- podaci o istrazivacu koji zakazuje -->
+        <fieldset name="istrazivac" id=istrazivac>
+          <legend><b> Podaci o istrazivaču </b></legend>
+          <!-- ime  -->
+          <label for="ime"> *Ime:</label>
+          <input type="text" name="ime" id=ime placeholder="Ana" onblur="proveraImena()">
+          <span id="spanIme"></span>
+          <br><br>
+
+          <!-- prezime -->
+          <label for="prezime"> *Prezime:</label>
+          <input type="text" name="prezime" id=prezime placeholder="Stancic" onblur="proveraPrezimena()">
+          <span id="spanPrezime"></span>
+          <br><br>
+
+          <!-- titula -->
+          <p> Titula: </p>
+          <input type="radio" name="titula" id=mr value="mr" checked>
+          <label for="mr"> mr </label> <br>
+
+          <input type="radio" name="titula" id=dr value="dr" checked>
+          <label for="dr"> dr </label> <br>
+
+          <input type="radio" name="titula" id=prof_dr value="prof_dr">
+          <label for="prof_dr"> prof.dr </label> <br><br>
+
+          <!-- istrazivacka grupa -->
+          <label for="grupa"> Istraživačka grupa: </label>
+          <select name="grupa" class="grupa">
+            <optgroup label="Imunologija">
+              <option value="imunohemija"> Imunohemija </option>
+              <option value="hematologija"> Hematologija </option>
+              <option value="celijska_imunologija"> Ćelijska imunologija </option>
+            </optgroup>
+            <optgroup label="Neurobiologija">
+              <option value="neuroendokrinologija"> Neuroendokrinologija </option>
+              <option value="neuronauke"> Neuronauke </option>
+              <option value="biofizika_i_biomehanika"> Biofizika i biomehanika </option>
+            </optgroup>
+            <optgroup label="Ishrana i metabolizam">
+              <option value="dijetologija"> Dijetologija </option>
+              <option value="nutritivna_biohemija"> Nutritivna biohemija </option>
+            </optgroup>
+          </select>
+          <br><br>
+
+          <!-- email -->
+          <label for="email">*E-mail:</label>
+          <input type="email" name="email" id=email placeholder="ime.prezime@imi.ac.rs" onblur="proveraEmaila()">
+          <span id="spanEmail"></span>
+          <br><br>
+
+          <!-- broj telefona -->
+          <label for="telefon">*Broj telefona:</label>
+          <input type="telefon" name="telefon" id=telefon placeholder="060-123-4567" onblur="proveraTelefona()">
+          <span id="spanTelefon"></span>
+          <br><br>
+        </fieldset>
+
+        <!-- podaci o instrumentu -->
+        <fieldset name="instrument" id=instrument>
+          <legend><b> Podaci o instrumentu </b></legend>
+
+          <!-- tip hromatografije -->
+          <label for="tip_hromatografije"> *Tip hromatografije: </label>
+          <select name="tip_hromatografije" id=tip_hromatografije>
+            <optgroup label="Gasna">
+              <option value="gasno_tecna"> Gasno-tečna </option>
+              <option value="gasno_cvrsta"> Gasno-čvrsta </option>
+            </optgroup>
+            <optgroup label="Tečna">
+              <option value="jonoizmenjivacka"> Jonoizmenjivačka </option>
+              <option value="ekskluziona"> Ekskluziona </option>
+              <option value="tankoslojna"> Hromatografija na tankom sloju </option>
+              <option value="particiona"> Particiona </option>
+            </optgroup>
+            <optgroup label="Superkritična-fluidna">
+              <option value="superkritična_fluidna"> Superkritična-fluidna </option>
+            </optgroup>
+          </select>
+          <br><br>
+
+          <!-- broj kolona -->
+          <label for="broj_kolona"> Broj kolona: </label>
+          <input type="number" name="broj_kolona" id=broj_kolona min="1" max="10">
+          <br><br>
+
+          <!-- brzina protoka -->
+          <label for="brzina_protoka"> Brzina protoka [ml/min]: </label>
+          <input type="range" name="brzina_protoka" id=brzina_protoka min="1" max="250">
+          <br><br>
+
+          <!-- dodatne opcije -->
+          <p> Dodatne opcije: </p>
+          <input type="checkbox" name="dodatne_opcije" id=hladjenje value="hladjenje">
+          <label for="hladjenje"> Hladjenje </label>
+          <br>
+          <input type="checkbox" name="dodatne_opcije" id=grejanje value="grejanje">
+          <label for="grejanje"> Grejanje</label>
+          <br>
+          <input type="checkbox" name="dodatne_opcije" id=odlozen_pocetak value="odlozen_pocetak">
+          <label for="odlozen_pocetak"> Odložen početak</label>
+          <br><br>
+        </fieldset>
+
+        <!-- podaci o rezervaciji -->
+        <fieldset name="rezervacija" id=rezervacija>
+          <legend><b> Podaci o rezervaciji </b></legend>
+
+          <!-- datum i vreme -->
+          <label for="pocetak_rada"> *Početak rada: </label>
+          <input type="datetime-local" name="pocetak_rada" id=pocetak_rada min="2023-12-09T00:00"
+            max="2024-03-30T00:00"><br><br>
+
+          <label for="kraj_rada"> *Kraj rada: </label>
+          <input type="datetime-local" name="kraj_rada" id=kraj_rada min="2023-12-09T00:00"
+            max="2024-03-30T00:00"><br><br>
+
+          <!-- napomena -->
+          <textarea name="napomena" id=napomena> Napomena: </textarea><br><br>
+
+          <input type="submit" value="Rezerviši" name="rezervisi" class="dugme">
+          <input type="reset" value="Odustani" class="dugme">
+          <br><br>
+
+          <!-- div za prikaz podataka iz forme nakon submitovanja -->
+          <div id="prikazPodataka"></div>
+        </fieldset>
+        <br>
+      </form>
+    </div>
+    <br>
+    <!-- istorija rezervacija -->
+    <fieldset name="istorija_rezervacija" id=istorija_rezervacija>
+      <legend><b> Istorija rezervacija </b></legend>
+
+      <table id="istorija_rezervacija">
+        <br>
+        <thead>
+          <tr>
+            <th rowspan="2">Titula</th>
+            <th colspan="2">Istraživač</th>
+            <th colspan="2">Kontakt</th>
+            <th rowspan="2">Tip hromatografije</th>
+            <th rowspan="2">Početak rada</th>
+            <th rowspan="2">Kraj rada</th>
+          </tr>
+          <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Telefon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>mr</td>
+            <td>Milica</td>
+            <td>Milovanović</td>
+            <td>m.milovanovic@imi.bg.ac</td>
+            <td>0601234567</td>
+            <td>Gasno-tečna</td>
+            <td>01.01.2023</td>
+            <td>02.01.2023.</td>
+          </tr>
+          <tr>
+            <td>dr</td>
+            <td>Petar</td>
+            <td>Petrović</td>
+            <td>p.petrovic@imi.bg.ac</td>
+            <td>0611234567</td>
+            <td>Jonoizmenjivačka</td>
+            <td>08.03.2023</td>
+            <td>09.03.2023.</td>
+          </tr>
+          <tr>
+            <td>prof.dr</td>
+            <td>Đorđe</td>
+            <td>Đorđević</td>
+            <td>dj.djordjevic@imi.bg.ac</td>
+            <td>0621234567</td>
+            <td>Ekskluziona</td>
+            <td>11.05.2023</td>
+            <td>12.05.2023.</td>
+          </tr>
+          <tr>
+            <td>prof.dr</td>
+            <td>Ana</td>
+            <td>Anić</td>
+            <td>a.anic@imi.bg.ac</td>
+            <td>0639876543</td>
+            <td>Particiona</td>
+            <td>25.06.2023</td>
+            <td>26.06.2023.</td>
+          </tr>
+          <tr>
+            <td rowspan="2">dr</td>
+            <td rowspan="2">Jovan</td>
+            <td rowspan="2">Jovanović</td>
+            <td rowspan="2">j.jovanovic@imi.bg.ac</td>
+            <td rowspan="2">0648765432</td>
+            <td rowspan="2">Hromatografija na tankom sloju</td>
+            <td>29.07.2023</td>
+            <td>30.07.2023.</td>
+          </tr>
+          <tr>
+            <td>15.08.2023.</td>
+            <td>16.08.2023.</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <br>
+  </section>
+
+  <footer>
+    <p>Institut za medicinska istraživanja Univerzitet u Beograd</p>
+  </footer>
+</body>
+
+</html>

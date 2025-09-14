@@ -1,0 +1,196 @@
+/* generalna stilizacija */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: Poppins, sans-serif;
+	width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+	display: block;
+	margin: 10px 10px 5px 10px;
+	padding: 10px;
+	background-color: #cf2e2e;
+	color: white;
+}
+
+#logo,
+.slika {
+	float: right;
+}
+
+.slika {
+	margin: 10px;
+}
+
+nav {
+	display: block;
+	padding: 10px;
+	margin: 5px 10px 10px 10px;
+	background-color: #941616;
+}
+
+nav li a {
+	color: white;
+}
+
+nav li {
+	display: inline;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+section {
+	background-color: #f4f0f0;
+	padding: 10px;
+	margin: 10px;
+}
+
+footer {
+	/* clear: both; */
+	background-color: #cf2e2e;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+
+}
+
+/* stilizacija za index stranicu */
+#bloodstream {
+	width: 1240px;
+}
+
+/* stilizacija za stranicu istrazivackih grupa */
+.grupa,
+#imunologija,
+#neuronauke,
+#kardio,
+#ishrana {
+	padding: 5px;
+	margin: 5px;
+}
+
+#imunologija,
+#imunologija,
+#neuronauke,
+#kardio,
+#ishrana {
+	overflow: hidden;
+}
+
+#imunologija p,
+#imunologija p,
+#neuronauke p,
+#kardio p,
+#ishrana p {
+	line-height: 1.5;
+}
+
+#kardio li,
+#ishrana li {
+	line-height: 1.5;
+	margin-left: 10px;
+	list-style-type: square;
+}
+
+/* stilizacija za stranicu projekti */
+#buttons_projekti {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dugme {
+	margin: 10px;
+	padding: 10px;
+	background-color: #cf2e2e;
+	color: white;
+}
+
+.article-container {
+	max-width: 1200px;
+	margin: 20px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.article {
+	width: 48%;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	line-height: 1.5;
+}
+
+.article-container h3 {
+	color: #cf2e2e;
+}
+
+/* stilizacija za stranicu rezervacije instrumenata */
+#forma {
+	padding: 12px 20px;
+	margin: 10px 0;
+}
+
+#istrazivac,
+#instrument,
+#rezervacija {
+	padding: 12px 20px;
+	margin: 10px 0;
+	border-radius: 20px;
+}
+
+#tip_hromatografije:hover,
+.grupa:hover {
+	background-color: rgb(246, 202, 206);
+}
+
+#istorija_rezervacija {
+	border-collapse: collapse;
+	padding: 10px 20px;
+	margin: 5px 0;
+}
+
+#istorija_rezervacija th {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	background-color: #B73E3E;
+	color: white;
+}
+
+#istorija_rezervacija th,
+#istorija_rezervacija td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+#istorija_rezervacija tr:nth-child(odd) {
+	background-color: #DBC8AC;
+}
+
+#istorija_rezervacija tr:nth-child(even) {
+	background-color: #EDDBC0;
+}
+
+#istorija_rezervacija tr:hover {
+	background-color: rgb(246, 202, 206);
+}
+
+#istorija_rezervacija tr {
+	text-align: center;
+}
